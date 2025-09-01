@@ -1,0 +1,11 @@
+name: Print Metadata
+on: [issues]
+jobs:
+  print_metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Print Issue Metadata
+        run: |
+          echo "Metadata: ${{ toJson(github) }}"
